@@ -2,16 +2,16 @@ baseurl = "https://sambhavjain.netlify.com/blog"
 title = "sambhav2612"
 theme = "vec"
 languageCode = "en-us"
-paginate = 10
-disqusShortname = "yiiim"
-googleAnalytics = "UA-57408564-1"
+paginate = 15
+disqusShortname = "sambhav2612"
+googleAnalytics = "UA-107733371-4"
 
 [menu]
   # Shown in the side menu.
   [[menu.main]]
     name = "posts"
     weight = 0
-    url = "/posts"
+    url = "/post"
   [[menu.main]]
     name = "contact"
     weight = 1

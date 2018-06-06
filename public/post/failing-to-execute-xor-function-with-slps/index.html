@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title> Failing to compute XOR-functions with an SLP &middot; sambhav2612 </title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.41" />
+
+
+<link rel="stylesheet" href="https://sambhavjain.netlify.com/blog/css/vec.css">
+
+
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+<link rel="shortcut icon" href="/favicon.ico">
+
+
+<link href="" rel="alternate" type="application/rss+xml" title="sambhav2612" />
+
+</head>
+
+<body>
+  <header>
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="https://sambhavjain.netlify.com/blog">/home/sambhav2612</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="/blog/contact">~/contact</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="/blog/faq">~/faq</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="/blog/post">~/posts</a>
+      </li>
+      
+  
+      <li class="pull-right"><a href=""><i class="fa fa-rss"></i></a></li>
+    </ul>
+  </nav>
+</header>
+  <div class="content">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#background">Background</a></li>
+<li><a href="#foreground">Foreground</a>
+<ul>
+<li>
+<ul>
+<li><a href="#dl-vs-ml-an-engima">DL vs ML: An Engima</a></li>
+<li><a href="#feature-hierarchy-concept-tree">Feature Hierarchy/Concept Tree</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#deeeep-enough-to-crawl-through">Deeeep enough to crawl through?</a>
+<ul>
+<li>
+<ul>
+<li><a href="#a-brief-introduction-to-perceptrons">A brief introduction to Perceptrons</a></li>
+<li><a href="#single-layered">Single-layered</a></li>
+<li><a href="#multi-layered">Multi-layered</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#the-xor-function">The XOR-function</a></li>
+</ul>
+</nav>
+    
+    <section class="post">
+      <h1 class="post-title"><a href="https://sambhavjain.netlify.com/blog/post/failing-to-execute-xor-function-with-slps/">Failing to compute XOR-functions with an SLP</a></h1>
+      <span class="post-date">Jun 6, 2018 </span>
+      <div class="post-content">
+        
+
+<p><strong>NOTE</strong>: More content would be added later with appropraite images for enhanced understanding of the topic.</p>
+
+<h1 id="background">Background</h1>
+
+<p>For some time now, I was wondering to get started with researching deep learning as a domain on my own. So, I waited till my semester exams passed and summer vacations came around. Since, I didn&rsquo;t sent any patch to this year&rsquo;s GSoC Orgs I was unable to become a part of the GSoC Clan. Nevertheless, I like researching, finding issues, harnessing powers of the Internet knocking at my doorstep to point in the direction of growth, which is like what <strong>Mars is to Elon Musk</strong>.</p>
+
+<h1 id="foreground">Foreground</h1>
+
+<p>At my last dev meetup with regional GDG group, we were inducted with Deep Learning Models. I prefer unsupervised models instead of supervised models due to their tendency to adapt from previous inputs.</p>
+
+<h3 id="dl-vs-ml-an-engima">DL vs ML: An Engima</h3>
+
+<p>The core difference between Deep Learning and Machine Learning lies in how the procedures are carried out; in deep learning we determine the output by using a layered-heirarchical structure, a structure that evloves in terms of real-life reperesentation of features it describes after the previous layer. While in machine learning the procedure takes in examples hard-coded already by the developers to give some desired result. Machine Learning hence learns to adapt to find the solution through several similar examples of the problem it is going to adapt to solve on its own.</p>
+
+<h3 id="feature-hierarchy-concept-tree">Feature Hierarchy/Concept Tree</h3>
+
+<p>Now, the most trivial layer is called <strong>Visible Layer</strong>, which the what the visible input is sent to be classified by the deep learning algorithm. Each successive layer takes in the output of immediate previous layer as its own input and proceeds with more robust classification than before. These middle layers are called <strong>Hidden Layers</strong> which as the name suggests are hidden within the algorithm, not visible at input or output.</p>
+
+<h1 id="deeeep-enough-to-crawl-through">Deeeep enough to crawl through?</h1>
+
+<blockquote>
+<p>The word deep in deep learning comes from the depth (shortest length to traverse from the that node/element to the output layer, analogous to the heights in the tree data structure) of hierarchical-layered structure defined.</p>
+</blockquote>
+
+<p>Deep Learning isn&rsquo;t something new either, first came <strong>Cybernetics</strong> in &lsquo;40s and &lsquo;50s followed by <strong>Connectionsism</strong> later in &lsquo;80s then finally as <strong>Deep Learning</strong> in the 2006-ish timeline. However, these are just buzzwords and the reality is that what people were doing 70 years back are even doing now, because it can (and will) simulate a living-cognitive mind.</p>
+
+<h3 id="a-brief-introduction-to-perceptrons">A brief introduction to Perceptrons</h3>
+
+<p>McCulloch-Pitts (1943) gave an algorithm to train trivial deep learning models by artificical neurons called Perceptrons. A perceptron can only have binary output i.e., 0 or 1 hence was very suitable for solving boolean algebra. Nah, it wasn&rsquo;t as much advance as they had thought but it is marvel of study in deep learning. Here, I&rsquo;d write about how and why it failed to compute the XOR-function.</p>
+
+<h3 id="single-layered">Single-layered</h3>
+
+<p>An SLP (<strong>S</strong>ingle <strong>L</strong>ayer <strong>P</strong>erceptron) has only two layers, one input layer and one output layer hence the input comes and goes just after the trivial classification from the visible layer while input is taken. This means that an SLP only works for a single line of input-output.</p>
+
+<h3 id="multi-layered">Multi-layered</h3>
+
+<p>On thr other hand a multi-layer perceptron has many intermediate layers in betweem input and output to figure out the desired output with more precision.</p>
+
+<h1 id="the-xor-function">The XOR-function</h1>
+
+      </div>
+    </section>
+    
+    <section class="pagination clearfix">
+       
+      
+    </section>
+    
+    
+<section id="disqus_thread" class='disqus'></section>
+<script>
+  var disqus_config = function () {
+    this.page.url = "https://sambhavjain.netlify.com/blog/post/failing-to-execute-xor-function-with-slps/";
+    
+  };
+  (function() {
+    var d = document, s = d.createElement('script');
+    s.src = '//sambhav2612.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
+  </div>
+  
+  <footer>
+  <div class="footer-info">
+    <p>
+      <a href="mailto:sambhavjain2612gmail.com?subject="><i class="fa fa-envelope-o"></i> sambhavjain2612gmail.com </a>
+      {
+        <a href="https://gohugo.io/" title="Hugo :: A fast and modern static website engine">Hugo 0.41</a>,
+        <a href="https://github.com/IvanChou/yii.im" title="vec">Vec</a> 
+      }
+      {<a href="http://creativecommons.org/licenses/by-nc-nd/3.0/" title="CC BY-NC-ND 3.0">CC BY-NC-ND 3.0</a>}
+    </p>
+  </div>
+</footer>
+  
+  <script src="https://sambhavjain.netlify.com/blog/js/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
+  
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-107733371-4', 'auto');
+ga('send', 'pageview');
+
+</script>
+
+
+</body>
+
+</html>

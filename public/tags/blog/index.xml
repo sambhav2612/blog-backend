@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on sambhav2612</title>
-    <link>https://sambhavjain.netlify.com/blog/post/</link>
-    <description>Recent content in Posts on sambhav2612</description>
+    <title>Blog on sambhav2612</title>
+    <link>https://sambhavjain.netlify.com/blog/tags/blog/</link>
+    <description>Recent content in Blog on sambhav2612</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 06 Jun 2018 23:14:11 +0530</lastBuildDate>
     
-	<atom:link href="https://sambhavjain.netlify.com/blog/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://sambhavjain.netlify.com/blog/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
