@@ -1,5 +1,5 @@
 baseurl = "https://sambhavjain.netlify.com/blog"
-title = "sambhav2612"
+title = "blog"
 theme = "vec"
 languageCode = "en-us"
 paginate = 15
@@ -9,21 +9,25 @@ googleAnalytics = "UA-107733371-4"
 [menu]
   # Shown in the side menu.
   [[menu.main]]
+    name = "home"
+    weight = 1
+    url = "https://sambhavjain.netlify.com/"
+  [[menu.main]]
     name = "posts"
-    weight = 0
+    weight = 1
     url = "/post"
   [[menu.main]]
     name = "contact"
-    weight = 1
+    weight = 2
     url = "/contact"
   [[menu.main]]
     name = "faq"
-    weight = 2
+    weight = 3
     url = "/faq"
 
 [params]
-  Keywords = ""
-  Description = "There are some words to describe your site"
+  Keywords = "blog, website, hugo, web, https"
+  Description = "Personal blog site of Sambhav Jain generated via Hugo."
   Avatar = "img/avatar.jpg"
   SelfIntro = "Just a worm, seeking for truth, living in shadows, not anymore..."
   Email = "sambhavjain2612gmail.com"
